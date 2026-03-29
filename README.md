@@ -2,7 +2,7 @@
 
 ## Usage
 ```bash
-composer require waves/protobuf
+composer require deemru/waves-protobuf
 ```
 
 ## Dependencies

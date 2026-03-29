@@ -1,8 +1,8 @@
 {
-    "name": "waves/protobuf",
+    "name": "deemru/waves-protobuf",
     "description": "Protocol Buffers PHP schemas for Waves Platform",
     "keywords": [ "waves", "wavesplatform", "protobuf" ],
-    "homepage": "https://github.com/wavesplatform/protobuf-php",
+    "homepage": "https://github.com/deemru/waves-protobuf-php",
     "type": "library",
     "license": "MIT",
     "authors": [
