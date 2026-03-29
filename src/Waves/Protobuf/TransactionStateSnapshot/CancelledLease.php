@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\TransactionStateSnapshot;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot.CancelledLease</code>
@@ -47,9 +47,9 @@ class CancelledLease extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLeaseId($var)
+    public function setLeaseId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->lease_id = $var;
 
         return $this;

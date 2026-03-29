@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\Block;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.Block.Header</code>
@@ -62,6 +62,10 @@ class Header extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.waves.Block.Header.ChallengedHeader challenged_header = 12;</code>
      */
     protected $challenged_header = null;
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 13;</code>
+     */
+    protected $finalization_voting = null;
 
     /**
      * Constructor.
@@ -73,7 +77,7 @@ class Header extends \Google\Protobuf\Internal\Message
      *     @type string $reference
      *     @type int|string $base_target
      *     @type string $generation_signature
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $feature_votes
+     *     @type int[] $feature_votes
      *     @type int|string $timestamp
      *     @type int $version
      *     @type string $generator
@@ -81,6 +85,7 @@ class Header extends \Google\Protobuf\Internal\Message
      *     @type string $transactions_root
      *     @type string $state_hash
      *     @type \Waves\Protobuf\Block\Header\ChallengedHeader $challenged_header
+     *     @type \Waves\Protobuf\FinalizationVoting $finalization_voting
      * }
      */
     public function __construct($data = NULL) {
@@ -102,7 +107,7 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setChainId($var)
+    public function setChainId(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->chain_id = $var;
@@ -124,9 +129,9 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReference($var)
+    public function setReference(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->reference = $var;
 
         return $this;
@@ -146,7 +151,7 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBaseTarget($var)
+    public function setBaseTarget(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->base_target = $var;
@@ -168,9 +173,9 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGenerationSignature($var)
+    public function setGenerationSignature(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->generation_signature = $var;
 
         return $this;
@@ -178,7 +183,7 @@ class Header extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated uint32 feature_votes = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getFeatureVotes()
     {
@@ -187,10 +192,10 @@ class Header extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated uint32 feature_votes = 5;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
-    public function setFeatureVotes($var)
+    public function setFeatureVotes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->feature_votes = $arr;
@@ -212,7 +217,7 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTimestamp($var)
+    public function setTimestamp(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->timestamp = $var;
@@ -234,7 +239,7 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
@@ -256,9 +261,9 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGenerator($var)
+    public function setGenerator(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->generator = $var;
 
         return $this;
@@ -278,7 +283,7 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRewardVote($var)
+    public function setRewardVote(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->reward_vote = $var;
@@ -300,9 +305,9 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTransactionsRoot($var)
+    public function setTransactionsRoot(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->transactions_root = $var;
 
         return $this;
@@ -322,9 +327,9 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStateHash($var)
+    public function setStateHash(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->state_hash = $var;
 
         return $this;
@@ -354,10 +359,40 @@ class Header extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Block\Header\ChallengedHeader $var
      * @return $this
      */
-    public function setChallengedHeader($var)
+    public function setChallengedHeader(\Waves\Protobuf\Block\Header\ChallengedHeader|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Block\Header\ChallengedHeader::class);
         $this->challenged_header = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 13;</code>
+     * @return \Waves\Protobuf\FinalizationVoting|null
+     */
+    public function getFinalizationVoting()
+    {
+        return $this->finalization_voting;
+    }
+
+    public function hasFinalizationVoting()
+    {
+        return isset($this->finalization_voting);
+    }
+
+    public function clearFinalizationVoting()
+    {
+        unset($this->finalization_voting);
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 13;</code>
+     * @param \Waves\Protobuf\FinalizationVoting $var
+     * @return $this
+     */
+    public function setFinalizationVoting(\Waves\Protobuf\FinalizationVoting|null $var)
+    {
+        $this->finalization_voting = $var;
 
         return $this;
     }

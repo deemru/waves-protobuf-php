@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.DataEntry</code>
@@ -52,9 +52,9 @@ class DataEntry extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKey($var)
+    public function setKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->key = $var;
 
         return $this;
@@ -79,7 +79,7 @@ class DataEntry extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setIntValue($var)
+    public function setIntValue(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(10, $var);
@@ -106,9 +106,8 @@ class DataEntry extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setBoolValue($var)
+    public function setBoolValue(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -133,9 +132,9 @@ class DataEntry extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBinaryValue($var)
+    public function setBinaryValue(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -160,9 +159,9 @@ class DataEntry extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStringValue($var)
+    public function setStringValue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(13, $var);
 
         return $this;

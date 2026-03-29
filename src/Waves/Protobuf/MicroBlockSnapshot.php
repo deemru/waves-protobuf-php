@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.MicroBlockSnapshot</code>
@@ -30,7 +30,7 @@ class MicroBlockSnapshot extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $total_block_id
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot>|\Google\Protobuf\Internal\RepeatedField $snapshots
+     *     @type \Waves\Protobuf\TransactionStateSnapshot[] $snapshots
      * }
      */
     public function __construct($data = NULL) {
@@ -52,9 +52,9 @@ class MicroBlockSnapshot extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTotalBlockId($var)
+    public function setTotalBlockId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->total_block_id = $var;
 
         return $this;
@@ -62,7 +62,7 @@ class MicroBlockSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot snapshots = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot>
      */
     public function getSnapshots()
     {
@@ -71,10 +71,10 @@ class MicroBlockSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot snapshots = 2;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot[] $var
      * @return $this
      */
-    public function setSnapshots($var)
+    public function setSnapshots(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot::class);
         $this->snapshots = $arr;

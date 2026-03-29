@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransferTransactionData</code>
@@ -67,9 +67,8 @@ class TransferTransactionData extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Recipient $var
      * @return $this
      */
-    public function setRecipient($var)
+    public function setRecipient(\Waves\Protobuf\Recipient|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Recipient::class);
         $this->recipient = $var;
 
         return $this;
@@ -99,9 +98,8 @@ class TransferTransactionData extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->amount = $var;
 
         return $this;
@@ -121,9 +119,9 @@ class TransferTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAttachment($var)
+    public function setAttachment(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->attachment = $var;
 
         return $this;

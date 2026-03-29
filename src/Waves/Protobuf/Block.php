@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.Block</code>
@@ -35,7 +35,7 @@ class Block extends \Google\Protobuf\Internal\Message
      *
      *     @type \Waves\Protobuf\Block\Header $header
      *     @type string $signature
-     *     @type array<\Waves\Protobuf\SignedTransaction>|\Google\Protobuf\Internal\RepeatedField $transactions
+     *     @type \Waves\Protobuf\SignedTransaction[] $transactions
      * }
      */
     public function __construct($data = NULL) {
@@ -67,9 +67,8 @@ class Block extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Block\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Waves\Protobuf\Block\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Block\Header::class);
         $this->header = $var;
 
         return $this;
@@ -89,9 +88,9 @@ class Block extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSignature($var)
+    public function setSignature(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->signature = $var;
 
         return $this;
@@ -99,7 +98,7 @@ class Block extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.SignedTransaction transactions = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\SignedTransaction>
      */
     public function getTransactions()
     {
@@ -108,10 +107,10 @@ class Block extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.SignedTransaction transactions = 3;</code>
-     * @param array<\Waves\Protobuf\SignedTransaction>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\SignedTransaction[] $var
      * @return $this
      */
-    public function setTransactions($var)
+    public function setTransactions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\SignedTransaction::class);
         $this->transactions = $arr;

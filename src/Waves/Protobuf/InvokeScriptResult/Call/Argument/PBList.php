@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\InvokeScriptResult\Call\Argument;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptResult.Call.Argument.List</code>
@@ -25,7 +25,7 @@ class PBList extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Waves\Protobuf\InvokeScriptResult\Call\Argument>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Waves\Protobuf\InvokeScriptResult\Call\Argument[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class PBList extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.InvokeScriptResult.Call.Argument items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\InvokeScriptResult\Call\Argument>
      */
     public function getItems()
     {
@@ -44,10 +44,10 @@ class PBList extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.InvokeScriptResult.Call.Argument items = 1;</code>
-     * @param array<\Waves\Protobuf\InvokeScriptResult\Call\Argument>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\InvokeScriptResult\Call\Argument[] $var
      * @return $this
      */
-    public function setItems($var)
+    public function setItems(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\InvokeScriptResult\Call\Argument::class);
         $this->items = $arr;

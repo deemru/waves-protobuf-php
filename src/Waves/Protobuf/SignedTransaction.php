@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.SignedTransaction</code>
@@ -28,7 +28,7 @@ class SignedTransaction extends \Google\Protobuf\Internal\Message
      *
      *     @type \Waves\Protobuf\Transaction $waves_transaction
      *     @type string $ethereum_transaction
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $proofs
+     *     @type string[] $proofs
      * }
      */
     public function __construct($data = NULL) {
@@ -55,9 +55,8 @@ class SignedTransaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Transaction $var
      * @return $this
      */
-    public function setWavesTransaction($var)
+    public function setWavesTransaction(\Waves\Protobuf\Transaction|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Transaction::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -82,9 +81,9 @@ class SignedTransaction extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEthereumTransaction($var)
+    public function setEthereumTransaction(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -92,7 +91,7 @@ class SignedTransaction extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getProofs()
     {
@@ -101,10 +100,10 @@ class SignedTransaction extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
-    public function setProofs($var)
+    public function setProofs(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
         $this->proofs = $arr;

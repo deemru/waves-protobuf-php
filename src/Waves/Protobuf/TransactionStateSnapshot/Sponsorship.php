@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\TransactionStateSnapshot;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot.Sponsorship</code>
@@ -52,9 +52,9 @@ class Sponsorship extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAssetId($var)
+    public function setAssetId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->asset_id = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class Sponsorship extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setMinFee($var)
+    public function setMinFee(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->min_fee = $var;

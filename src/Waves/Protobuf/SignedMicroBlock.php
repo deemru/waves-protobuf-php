@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.SignedMicroBlock</code>
@@ -67,9 +67,8 @@ class SignedMicroBlock extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\MicroBlock $var
      * @return $this
      */
-    public function setMicroBlock($var)
+    public function setMicroBlock(\Waves\Protobuf\MicroBlock|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\MicroBlock::class);
         $this->micro_block = $var;
 
         return $this;
@@ -89,9 +88,9 @@ class SignedMicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSignature($var)
+    public function setSignature(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->signature = $var;
 
         return $this;
@@ -111,9 +110,9 @@ class SignedMicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTotalBlockId($var)
+    public function setTotalBlockId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->total_block_id = $var;
 
         return $this;

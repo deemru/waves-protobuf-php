@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.ExchangeTransactionData</code>
@@ -45,7 +45,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
      *     @type int|string $price
      *     @type int|string $buy_matcher_fee
      *     @type int|string $sell_matcher_fee
-     *     @type array<\Waves\Protobuf\Order>|\Google\Protobuf\Internal\RepeatedField $orders
+     *     @type \Waves\Protobuf\Order[] $orders
      * }
      */
     public function __construct($data = NULL) {
@@ -67,7 +67,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -89,7 +89,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setPrice($var)
+    public function setPrice(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->price = $var;
@@ -111,7 +111,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBuyMatcherFee($var)
+    public function setBuyMatcherFee(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->buy_matcher_fee = $var;
@@ -133,7 +133,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setSellMatcherFee($var)
+    public function setSellMatcherFee(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->sell_matcher_fee = $var;
@@ -143,7 +143,7 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.Order orders = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\Order>
      */
     public function getOrders()
     {
@@ -152,10 +152,10 @@ class ExchangeTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.Order orders = 5;</code>
-     * @param array<\Waves\Protobuf\Order>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\Order[] $var
      * @return $this
      */
-    public function setOrders($var)
+    public function setOrders(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\Order::class);
         $this->orders = $arr;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\TransactionStateSnapshot;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot.AccountData</code>
@@ -30,7 +30,7 @@ class AccountData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $address
-     *     @type array<\Waves\Protobuf\DataEntry>|\Google\Protobuf\Internal\RepeatedField $entries
+     *     @type \Waves\Protobuf\DataEntry[] $entries
      * }
      */
     public function __construct($data = NULL) {
@@ -52,9 +52,9 @@ class AccountData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAddress($var)
+    public function setAddress(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->address = $var;
 
         return $this;
@@ -62,7 +62,7 @@ class AccountData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.DataEntry entries = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\DataEntry>
      */
     public function getEntries()
     {
@@ -71,10 +71,10 @@ class AccountData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.DataEntry entries = 2;</code>
-     * @param array<\Waves\Protobuf\DataEntry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\DataEntry[] $var
      * @return $this
      */
-    public function setEntries($var)
+    public function setEntries(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\DataEntry::class);
         $this->entries = $arr;

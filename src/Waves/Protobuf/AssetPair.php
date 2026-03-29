@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.AssetPair</code>
@@ -52,9 +52,9 @@ class AssetPair extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAmountAssetId($var)
+    public function setAmountAssetId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->amount_asset_id = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class AssetPair extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPriceAssetId($var)
+    public function setPriceAssetId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->price_asset_id = $var;
 
         return $this;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.SponsorFeeTransactionData</code>
@@ -57,9 +57,8 @@ class SponsorFeeTransactionData extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setMinFee($var)
+    public function setMinFee(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->min_fee = $var;
 
         return $this;

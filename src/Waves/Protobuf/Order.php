@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.Order</code>
@@ -84,7 +84,7 @@ class Order extends \Google\Protobuf\Internal\Message
      *     @type int|string $expiration
      *     @type \Waves\Protobuf\Amount $matcher_fee
      *     @type int $version
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $proofs
+     *     @type string[] $proofs
      *     @type int $price_mode
      *     @type string $attachment
      *     @type string $sender_public_key
@@ -110,7 +110,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setChainId($var)
+    public function setChainId(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->chain_id = $var;
@@ -132,9 +132,9 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMatcherPublicKey($var)
+    public function setMatcherPublicKey(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->matcher_public_key = $var;
 
         return $this;
@@ -164,9 +164,8 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\AssetPair $var
      * @return $this
      */
-    public function setAssetPair($var)
+    public function setAssetPair(\Waves\Protobuf\AssetPair|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\AssetPair::class);
         $this->asset_pair = $var;
 
         return $this;
@@ -174,7 +173,7 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.Order.Side order_side = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Waves\Protobuf\Order\Side}
      */
     public function getOrderSide()
     {
@@ -183,10 +182,10 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.Order.Side order_side = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Waves\Protobuf\Order\Side}
      * @return $this
      */
-    public function setOrderSide($var)
+    public function setOrderSide(int $var)
     {
         GPBUtil::checkEnum($var, \Waves\Protobuf\Order\Side::class);
         $this->order_side = $var;
@@ -208,7 +207,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -230,7 +229,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setPrice($var)
+    public function setPrice(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->price = $var;
@@ -252,7 +251,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTimestamp($var)
+    public function setTimestamp(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->timestamp = $var;
@@ -274,7 +273,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpiration($var)
+    public function setExpiration(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expiration = $var;
@@ -306,9 +305,8 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setMatcherFee($var)
+    public function setMatcherFee(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->matcher_fee = $var;
 
         return $this;
@@ -328,7 +326,7 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
@@ -338,7 +336,7 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getProofs()
     {
@@ -347,10 +345,10 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated bytes proofs = 12;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
-    public function setProofs($var)
+    public function setProofs(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
         $this->proofs = $arr;
@@ -360,7 +358,7 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.Order.PriceMode price_mode = 14;</code>
-     * @return int
+     * @return int one of the values in {@see \Waves\Protobuf\Order\PriceMode}
      */
     public function getPriceMode()
     {
@@ -369,10 +367,10 @@ class Order extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.Order.PriceMode price_mode = 14;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Waves\Protobuf\Order\PriceMode}
      * @return $this
      */
-    public function setPriceMode($var)
+    public function setPriceMode(int $var)
     {
         GPBUtil::checkEnum($var, \Waves\Protobuf\Order\PriceMode::class);
         $this->price_mode = $var;
@@ -394,9 +392,9 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAttachment($var)
+    public function setAttachment(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->attachment = $var;
 
         return $this;
@@ -421,9 +419,9 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSenderPublicKey($var)
+    public function setSenderPublicKey(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -448,9 +446,9 @@ class Order extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEip712Signature($var)
+    public function setEip712Signature(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(13, $var);
 
         return $this;

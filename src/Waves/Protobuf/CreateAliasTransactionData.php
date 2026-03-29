@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.CreateAliasTransactionData</code>
@@ -47,9 +47,9 @@ class CreateAliasTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAlias($var)
+    public function setAlias(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->alias = $var;
 
         return $this;

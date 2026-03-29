@@ -10,22 +10,18 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Generated from protobuf message <code>waves.TransactionStateSnapshot.AccountScript</code>
+ * Generated from protobuf message <code>waves.TransactionStateSnapshot.GenerationCommitment</code>
  */
-class AccountScript extends \Google\Protobuf\Internal\Message
+class GenerationCommitment extends \Google\Protobuf\Internal\Message
 {
     /**
      * Generated from protobuf field <code>bytes sender_public_key = 1;</code>
      */
     protected $sender_public_key = '';
     /**
-     * Generated from protobuf field <code>bytes script = 2;</code>
+     * Generated from protobuf field <code>bytes endorser_public_key = 2;</code>
      */
-    protected $script = '';
-    /**
-     * Generated from protobuf field <code>int64 verifier_complexity = 3;</code>
-     */
-    protected $verifier_complexity = 0;
+    protected $endorser_public_key = '';
 
     /**
      * Constructor.
@@ -34,8 +30,7 @@ class AccountScript extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $sender_public_key
-     *     @type string $script
-     *     @type int|string $verifier_complexity
+     *     @type string $endorser_public_key
      * }
      */
     public function __construct($data = NULL) {
@@ -66,45 +61,23 @@ class AccountScript extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes script = 2;</code>
+     * Generated from protobuf field <code>bytes endorser_public_key = 2;</code>
      * @return string
      */
-    public function getScript()
+    public function getEndorserPublicKey()
     {
-        return $this->script;
+        return $this->endorser_public_key;
     }
 
     /**
-     * Generated from protobuf field <code>bytes script = 2;</code>
+     * Generated from protobuf field <code>bytes endorser_public_key = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setScript(string $var)
+    public function setEndorserPublicKey(string $var)
     {
         GPBUtil::checkString($var, false);
-        $this->script = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 verifier_complexity = 3;</code>
-     * @return int|string
-     */
-    public function getVerifierComplexity()
-    {
-        return $this->verifier_complexity;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 verifier_complexity = 3;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setVerifierComplexity(int|string $var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->verifier_complexity = $var;
+        $this->endorser_public_key = $var;
 
         return $this;
     }

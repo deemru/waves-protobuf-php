@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\TransactionStateSnapshot;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot.Balance</code>
@@ -52,9 +52,9 @@ class Balance extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAddress($var)
+    public function setAddress(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->address = $var;
 
         return $this;
@@ -84,9 +84,8 @@ class Balance extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->amount = $var;
 
         return $this;

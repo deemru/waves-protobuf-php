@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.ReissueTransactionData</code>
@@ -62,9 +62,8 @@ class ReissueTransactionData extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setAssetAmount($var)
+    public function setAssetAmount(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->asset_amount = $var;
 
         return $this;
@@ -84,9 +83,8 @@ class ReissueTransactionData extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReissuable($var)
+    public function setReissuable(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reissuable = $var;
 
         return $this;

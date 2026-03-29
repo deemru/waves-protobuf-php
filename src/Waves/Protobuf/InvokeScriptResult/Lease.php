@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\InvokeScriptResult;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptResult.Lease</code>
@@ -72,9 +72,8 @@ class Lease extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Recipient $var
      * @return $this
      */
-    public function setRecipient($var)
+    public function setRecipient(\Waves\Protobuf\Recipient|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Recipient::class);
         $this->recipient = $var;
 
         return $this;
@@ -94,7 +93,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -116,7 +115,7 @@ class Lease extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setNonce($var)
+    public function setNonce(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->nonce = $var;
@@ -138,9 +137,9 @@ class Lease extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLeaseId($var)
+    public function setLeaseId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->lease_id = $var;
 
         return $this;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptTransactionData</code>
@@ -35,7 +35,7 @@ class InvokeScriptTransactionData extends \Google\Protobuf\Internal\Message
      *
      *     @type \Waves\Protobuf\Recipient $d_app
      *     @type string $function_call
-     *     @type array<\Waves\Protobuf\Amount>|\Google\Protobuf\Internal\RepeatedField $payments
+     *     @type \Waves\Protobuf\Amount[] $payments
      * }
      */
     public function __construct($data = NULL) {
@@ -67,9 +67,8 @@ class InvokeScriptTransactionData extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Recipient $var
      * @return $this
      */
-    public function setDApp($var)
+    public function setDApp(\Waves\Protobuf\Recipient|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Recipient::class);
         $this->d_app = $var;
 
         return $this;
@@ -89,9 +88,9 @@ class InvokeScriptTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFunctionCall($var)
+    public function setFunctionCall(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->function_call = $var;
 
         return $this;
@@ -99,7 +98,7 @@ class InvokeScriptTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.Amount payments = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\Amount>
      */
     public function getPayments()
     {
@@ -108,10 +107,10 @@ class InvokeScriptTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.Amount payments = 3;</code>
-     * @param array<\Waves\Protobuf\Amount>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\Amount[] $var
      * @return $this
      */
-    public function setPayments($var)
+    public function setPayments(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\Amount::class);
         $this->payments = $arr;

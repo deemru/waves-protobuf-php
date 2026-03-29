@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot</code>
@@ -70,6 +70,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.waves.TransactionStatus transaction_status = 14;</code>
      */
     protected $transaction_status = 0;
+    /**
+     * Generated from protobuf field <code>.waves.TransactionStateSnapshot.GenerationCommitment generation_commitment = 15;</code>
+     */
+    protected $generation_commitment = null;
 
     /**
      * Constructor.
@@ -77,20 +81,21 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\Balance>|\Google\Protobuf\Internal\RepeatedField $balances
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\LeaseBalance>|\Google\Protobuf\Internal\RepeatedField $lease_balances
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\NewLease>|\Google\Protobuf\Internal\RepeatedField $new_leases
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\CancelledLease>|\Google\Protobuf\Internal\RepeatedField $cancelled_leases
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\NewAsset>|\Google\Protobuf\Internal\RepeatedField $asset_statics
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\AssetVolume>|\Google\Protobuf\Internal\RepeatedField $asset_volumes
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription>|\Google\Protobuf\Internal\RepeatedField $asset_names_and_descriptions
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\Balance[] $balances
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\LeaseBalance[] $lease_balances
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\NewLease[] $new_leases
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\CancelledLease[] $cancelled_leases
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\NewAsset[] $asset_statics
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\AssetVolume[] $asset_volumes
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription[] $asset_names_and_descriptions
      *     @type \Waves\Protobuf\TransactionStateSnapshot\AssetScript $asset_scripts
      *     @type \Waves\Protobuf\TransactionStateSnapshot\Alias $aliases
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\OrderFill>|\Google\Protobuf\Internal\RepeatedField $order_fills
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\OrderFill[] $order_fills
      *     @type \Waves\Protobuf\TransactionStateSnapshot\AccountScript $account_scripts
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\AccountData>|\Google\Protobuf\Internal\RepeatedField $account_data
-     *     @type array<\Waves\Protobuf\TransactionStateSnapshot\Sponsorship>|\Google\Protobuf\Internal\RepeatedField $sponsorships
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\AccountData[] $account_data
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\Sponsorship[] $sponsorships
      *     @type int $transaction_status
+     *     @type \Waves\Protobuf\TransactionStateSnapshot\GenerationCommitment $generation_commitment
      * }
      */
     public function __construct($data = NULL) {
@@ -100,7 +105,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.Balance balances = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\Balance>
      */
     public function getBalances()
     {
@@ -109,10 +114,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.Balance balances = 1;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\Balance>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\Balance[] $var
      * @return $this
      */
-    public function setBalances($var)
+    public function setBalances(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\Balance::class);
         $this->balances = $arr;
@@ -122,7 +127,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.LeaseBalance lease_balances = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\LeaseBalance>
      */
     public function getLeaseBalances()
     {
@@ -131,10 +136,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.LeaseBalance lease_balances = 2;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\LeaseBalance>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\LeaseBalance[] $var
      * @return $this
      */
-    public function setLeaseBalances($var)
+    public function setLeaseBalances(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\LeaseBalance::class);
         $this->lease_balances = $arr;
@@ -144,7 +149,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.NewLease new_leases = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\NewLease>
      */
     public function getNewLeases()
     {
@@ -153,10 +158,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.NewLease new_leases = 3;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\NewLease>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\NewLease[] $var
      * @return $this
      */
-    public function setNewLeases($var)
+    public function setNewLeases(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\NewLease::class);
         $this->new_leases = $arr;
@@ -166,7 +171,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.CancelledLease cancelled_leases = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\CancelledLease>
      */
     public function getCancelledLeases()
     {
@@ -175,10 +180,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.CancelledLease cancelled_leases = 4;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\CancelledLease>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\CancelledLease[] $var
      * @return $this
      */
-    public function setCancelledLeases($var)
+    public function setCancelledLeases(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\CancelledLease::class);
         $this->cancelled_leases = $arr;
@@ -188,7 +193,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.NewAsset asset_statics = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\NewAsset>
      */
     public function getAssetStatics()
     {
@@ -197,10 +202,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.NewAsset asset_statics = 5;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\NewAsset>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\NewAsset[] $var
      * @return $this
      */
-    public function setAssetStatics($var)
+    public function setAssetStatics(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\NewAsset::class);
         $this->asset_statics = $arr;
@@ -210,7 +215,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AssetVolume asset_volumes = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\AssetVolume>
      */
     public function getAssetVolumes()
     {
@@ -219,10 +224,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AssetVolume asset_volumes = 6;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\AssetVolume>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\AssetVolume[] $var
      * @return $this
      */
-    public function setAssetVolumes($var)
+    public function setAssetVolumes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\AssetVolume::class);
         $this->asset_volumes = $arr;
@@ -232,7 +237,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AssetNameAndDescription asset_names_and_descriptions = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription>
      */
     public function getAssetNamesAndDescriptions()
     {
@@ -241,10 +246,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AssetNameAndDescription asset_names_and_descriptions = 7;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription[] $var
      * @return $this
      */
-    public function setAssetNamesAndDescriptions($var)
+    public function setAssetNamesAndDescriptions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\AssetNameAndDescription::class);
         $this->asset_names_and_descriptions = $arr;
@@ -276,9 +281,8 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\TransactionStateSnapshot\AssetScript $var
      * @return $this
      */
-    public function setAssetScripts($var)
+    public function setAssetScripts(\Waves\Protobuf\TransactionStateSnapshot\AssetScript|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\TransactionStateSnapshot\AssetScript::class);
         $this->asset_scripts = $var;
 
         return $this;
@@ -308,9 +312,8 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\TransactionStateSnapshot\Alias $var
      * @return $this
      */
-    public function setAliases($var)
+    public function setAliases(\Waves\Protobuf\TransactionStateSnapshot\Alias|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\TransactionStateSnapshot\Alias::class);
         $this->aliases = $var;
 
         return $this;
@@ -318,7 +321,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.OrderFill order_fills = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\OrderFill>
      */
     public function getOrderFills()
     {
@@ -327,10 +330,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.OrderFill order_fills = 10;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\OrderFill>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\OrderFill[] $var
      * @return $this
      */
-    public function setOrderFills($var)
+    public function setOrderFills(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\OrderFill::class);
         $this->order_fills = $arr;
@@ -362,9 +365,8 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\TransactionStateSnapshot\AccountScript $var
      * @return $this
      */
-    public function setAccountScripts($var)
+    public function setAccountScripts(\Waves\Protobuf\TransactionStateSnapshot\AccountScript|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\TransactionStateSnapshot\AccountScript::class);
         $this->account_scripts = $var;
 
         return $this;
@@ -372,7 +374,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AccountData account_data = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\AccountData>
      */
     public function getAccountData()
     {
@@ -381,10 +383,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.AccountData account_data = 12;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\AccountData>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\AccountData[] $var
      * @return $this
      */
-    public function setAccountData($var)
+    public function setAccountData(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\AccountData::class);
         $this->account_data = $arr;
@@ -394,7 +396,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.Sponsorship sponsorships = 13;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\TransactionStateSnapshot\Sponsorship>
      */
     public function getSponsorships()
     {
@@ -403,10 +405,10 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.TransactionStateSnapshot.Sponsorship sponsorships = 13;</code>
-     * @param array<\Waves\Protobuf\TransactionStateSnapshot\Sponsorship>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\TransactionStateSnapshot\Sponsorship[] $var
      * @return $this
      */
-    public function setSponsorships($var)
+    public function setSponsorships(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\TransactionStateSnapshot\Sponsorship::class);
         $this->sponsorships = $arr;
@@ -416,7 +418,7 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.TransactionStatus transaction_status = 14;</code>
-     * @return int
+     * @return int one of the values in {@see \Waves\Protobuf\TransactionStatus}
      */
     public function getTransactionStatus()
     {
@@ -425,13 +427,44 @@ class TransactionStateSnapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.waves.TransactionStatus transaction_status = 14;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Waves\Protobuf\TransactionStatus}
      * @return $this
      */
-    public function setTransactionStatus($var)
+    public function setTransactionStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Waves\Protobuf\TransactionStatus::class);
         $this->transaction_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.TransactionStateSnapshot.GenerationCommitment generation_commitment = 15;</code>
+     * @return \Waves\Protobuf\TransactionStateSnapshot\GenerationCommitment|null
+     */
+    public function getGenerationCommitment()
+    {
+        return $this->generation_commitment;
+    }
+
+    public function hasGenerationCommitment()
+    {
+        return isset($this->generation_commitment);
+    }
+
+    public function clearGenerationCommitment()
+    {
+        unset($this->generation_commitment);
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.TransactionStateSnapshot.GenerationCommitment generation_commitment = 15;</code>
+     * @param \Waves\Protobuf\TransactionStateSnapshot\GenerationCommitment $var
+     * @return $this
+     */
+    public function setGenerationCommitment(\Waves\Protobuf\TransactionStateSnapshot\GenerationCommitment|null $var)
+    {
+        $this->generation_commitment = $var;
 
         return $this;
     }

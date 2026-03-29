@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.RewardShare</code>
@@ -52,9 +52,9 @@ class RewardShare extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAddress($var)
+    public function setAddress(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->address = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class RewardShare extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setReward($var)
+    public function setReward(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->reward = $var;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\TransactionStateSnapshot;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.TransactionStateSnapshot.OrderFill</code>
@@ -57,9 +57,9 @@ class OrderFill extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOrderId($var)
+    public function setOrderId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->order_id = $var;
 
         return $this;
@@ -79,7 +79,7 @@ class OrderFill extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setVolume($var)
+    public function setVolume(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->volume = $var;
@@ -101,7 +101,7 @@ class OrderFill extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFee($var)
+    public function setFee(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->fee = $var;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\InvokeScriptResult;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptResult.Call</code>
@@ -35,8 +35,8 @@ class Call extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $function
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $args_bytes
-     *     @type array<\Waves\Protobuf\InvokeScriptResult\Call\Argument>|\Google\Protobuf\Internal\RepeatedField $args
+     *     @type string[] $args_bytes
+     *     @type \Waves\Protobuf\InvokeScriptResult\Call\Argument[] $args
      * }
      */
     public function __construct($data = NULL) {
@@ -58,9 +58,9 @@ class Call extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFunction($var)
+    public function setFunction(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->function = $var;
 
         return $this;
@@ -68,25 +68,29 @@ class Call extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated bytes args_bytes = 2 [deprecated = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      * @deprecated
      */
     public function getArgsBytes()
     {
-        @trigger_error('args_bytes is deprecated.', E_USER_DEPRECATED);
+        if (count($this->args_bytes) !== 0) {
+            @trigger_error('args_bytes is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->args_bytes;
     }
 
     /**
      * Generated from protobuf field <code>repeated bytes args_bytes = 2 [deprecated = true];</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      * @deprecated
      */
-    public function setArgsBytes($var)
+    public function setArgsBytes(array|RepeatedField $var)
     {
-        @trigger_error('args_bytes is deprecated.', E_USER_DEPRECATED);
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::BYTES);
+        if (count($arr) !== 0) {
+            @trigger_error('args_bytes is deprecated.', E_USER_DEPRECATED);
+        }
         $this->args_bytes = $arr;
 
         return $this;
@@ -94,7 +98,7 @@ class Call extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.InvokeScriptResult.Call.Argument args = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\InvokeScriptResult\Call\Argument>
      */
     public function getArgs()
     {
@@ -103,10 +107,10 @@ class Call extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.InvokeScriptResult.Call.Argument args = 3;</code>
-     * @param array<\Waves\Protobuf\InvokeScriptResult\Call\Argument>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\InvokeScriptResult\Call\Argument[] $var
      * @return $this
      */
-    public function setArgs($var)
+    public function setArgs(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\InvokeScriptResult\Call\Argument::class);
         $this->args = $arr;

@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\InvokeScriptResult;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptResult.Reissue</code>
@@ -57,9 +57,9 @@ class Reissue extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAssetId($var)
+    public function setAssetId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->asset_id = $var;
 
         return $this;
@@ -79,7 +79,7 @@ class Reissue extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;
@@ -101,9 +101,8 @@ class Reissue extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsReissuable($var)
+    public function setIsReissuable(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_reissuable = $var;
 
         return $this;

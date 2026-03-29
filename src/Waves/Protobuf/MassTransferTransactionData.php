@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.MassTransferTransactionData</code>
@@ -34,7 +34,7 @@ class MassTransferTransactionData extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $asset_id
-     *     @type array<\Waves\Protobuf\MassTransferTransactionData\Transfer>|\Google\Protobuf\Internal\RepeatedField $transfers
+     *     @type \Waves\Protobuf\MassTransferTransactionData\Transfer[] $transfers
      *     @type string $attachment
      * }
      */
@@ -57,9 +57,9 @@ class MassTransferTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAssetId($var)
+    public function setAssetId(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->asset_id = $var;
 
         return $this;
@@ -67,7 +67,7 @@ class MassTransferTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.MassTransferTransactionData.Transfer transfers = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\MassTransferTransactionData\Transfer>
      */
     public function getTransfers()
     {
@@ -76,10 +76,10 @@ class MassTransferTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.MassTransferTransactionData.Transfer transfers = 2;</code>
-     * @param array<\Waves\Protobuf\MassTransferTransactionData\Transfer>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\MassTransferTransactionData\Transfer[] $var
      * @return $this
      */
-    public function setTransfers($var)
+    public function setTransfers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\MassTransferTransactionData\Transfer::class);
         $this->transfers = $arr;
@@ -101,9 +101,9 @@ class MassTransferTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAttachment($var)
+    public function setAttachment(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->attachment = $var;
 
         return $this;

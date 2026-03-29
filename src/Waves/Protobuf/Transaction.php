@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.Transaction</code>
@@ -65,6 +65,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      *     @type \Waves\Protobuf\InvokeScriptTransactionData $invoke_script
      *     @type \Waves\Protobuf\UpdateAssetInfoTransactionData $update_asset_info
      *     @type \Waves\Protobuf\InvokeExpressionTransactionData $invoke_expression
+     *     @type \Waves\Protobuf\CommitToGenerationTransactionData $commit_to_generation
      * }
      */
     public function __construct($data = NULL) {
@@ -86,7 +87,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setChainId($var)
+    public function setChainId(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->chain_id = $var;
@@ -108,9 +109,9 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSenderPublicKey($var)
+    public function setSenderPublicKey(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->sender_public_key = $var;
 
         return $this;
@@ -140,9 +141,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\Amount $var
      * @return $this
      */
-    public function setFee($var)
+    public function setFee(\Waves\Protobuf\Amount|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\Amount::class);
         $this->fee = $var;
 
         return $this;
@@ -162,7 +162,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTimestamp($var)
+    public function setTimestamp(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->timestamp = $var;
@@ -184,7 +184,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
@@ -211,9 +211,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\GenesisTransactionData $var
      * @return $this
      */
-    public function setGenesis($var)
+    public function setGenesis(\Waves\Protobuf\GenesisTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\GenesisTransactionData::class);
         $this->writeOneof(101, $var);
 
         return $this;
@@ -238,9 +237,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\PaymentTransactionData $var
      * @return $this
      */
-    public function setPayment($var)
+    public function setPayment(\Waves\Protobuf\PaymentTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\PaymentTransactionData::class);
         $this->writeOneof(102, $var);
 
         return $this;
@@ -265,9 +263,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\IssueTransactionData $var
      * @return $this
      */
-    public function setIssue($var)
+    public function setIssue(\Waves\Protobuf\IssueTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\IssueTransactionData::class);
         $this->writeOneof(103, $var);
 
         return $this;
@@ -292,9 +289,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\TransferTransactionData $var
      * @return $this
      */
-    public function setTransfer($var)
+    public function setTransfer(\Waves\Protobuf\TransferTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\TransferTransactionData::class);
         $this->writeOneof(104, $var);
 
         return $this;
@@ -319,9 +315,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\ReissueTransactionData $var
      * @return $this
      */
-    public function setReissue($var)
+    public function setReissue(\Waves\Protobuf\ReissueTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\ReissueTransactionData::class);
         $this->writeOneof(105, $var);
 
         return $this;
@@ -346,9 +341,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\BurnTransactionData $var
      * @return $this
      */
-    public function setBurn($var)
+    public function setBurn(\Waves\Protobuf\BurnTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\BurnTransactionData::class);
         $this->writeOneof(106, $var);
 
         return $this;
@@ -373,9 +367,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\ExchangeTransactionData $var
      * @return $this
      */
-    public function setExchange($var)
+    public function setExchange(\Waves\Protobuf\ExchangeTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\ExchangeTransactionData::class);
         $this->writeOneof(107, $var);
 
         return $this;
@@ -400,9 +393,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\LeaseTransactionData $var
      * @return $this
      */
-    public function setLease($var)
+    public function setLease(\Waves\Protobuf\LeaseTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\LeaseTransactionData::class);
         $this->writeOneof(108, $var);
 
         return $this;
@@ -427,9 +419,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\LeaseCancelTransactionData $var
      * @return $this
      */
-    public function setLeaseCancel($var)
+    public function setLeaseCancel(\Waves\Protobuf\LeaseCancelTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\LeaseCancelTransactionData::class);
         $this->writeOneof(109, $var);
 
         return $this;
@@ -454,9 +445,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\CreateAliasTransactionData $var
      * @return $this
      */
-    public function setCreateAlias($var)
+    public function setCreateAlias(\Waves\Protobuf\CreateAliasTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\CreateAliasTransactionData::class);
         $this->writeOneof(110, $var);
 
         return $this;
@@ -481,9 +471,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\MassTransferTransactionData $var
      * @return $this
      */
-    public function setMassTransfer($var)
+    public function setMassTransfer(\Waves\Protobuf\MassTransferTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\MassTransferTransactionData::class);
         $this->writeOneof(111, $var);
 
         return $this;
@@ -508,9 +497,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\DataTransactionData $var
      * @return $this
      */
-    public function setDataTransaction($var)
+    public function setDataTransaction(\Waves\Protobuf\DataTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\DataTransactionData::class);
         $this->writeOneof(112, $var);
 
         return $this;
@@ -535,9 +523,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\SetScriptTransactionData $var
      * @return $this
      */
-    public function setSetScript($var)
+    public function setSetScript(\Waves\Protobuf\SetScriptTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\SetScriptTransactionData::class);
         $this->writeOneof(113, $var);
 
         return $this;
@@ -562,9 +549,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\SponsorFeeTransactionData $var
      * @return $this
      */
-    public function setSponsorFee($var)
+    public function setSponsorFee(\Waves\Protobuf\SponsorFeeTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\SponsorFeeTransactionData::class);
         $this->writeOneof(114, $var);
 
         return $this;
@@ -589,9 +575,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\SetAssetScriptTransactionData $var
      * @return $this
      */
-    public function setSetAssetScript($var)
+    public function setSetAssetScript(\Waves\Protobuf\SetAssetScriptTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\SetAssetScriptTransactionData::class);
         $this->writeOneof(115, $var);
 
         return $this;
@@ -616,9 +601,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\InvokeScriptTransactionData $var
      * @return $this
      */
-    public function setInvokeScript($var)
+    public function setInvokeScript(\Waves\Protobuf\InvokeScriptTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\InvokeScriptTransactionData::class);
         $this->writeOneof(116, $var);
 
         return $this;
@@ -643,9 +627,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\UpdateAssetInfoTransactionData $var
      * @return $this
      */
-    public function setUpdateAssetInfo($var)
+    public function setUpdateAssetInfo(\Waves\Protobuf\UpdateAssetInfoTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\UpdateAssetInfoTransactionData::class);
         $this->writeOneof(117, $var);
 
         return $this;
@@ -670,10 +653,35 @@ class Transaction extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\InvokeExpressionTransactionData $var
      * @return $this
      */
-    public function setInvokeExpression($var)
+    public function setInvokeExpression(\Waves\Protobuf\InvokeExpressionTransactionData|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\InvokeExpressionTransactionData::class);
         $this->writeOneof(119, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.CommitToGenerationTransactionData commit_to_generation = 120;</code>
+     * @return \Waves\Protobuf\CommitToGenerationTransactionData|null
+     */
+    public function getCommitToGeneration()
+    {
+        return $this->readOneof(120);
+    }
+
+    public function hasCommitToGeneration()
+    {
+        return $this->hasOneof(120);
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.CommitToGenerationTransactionData commit_to_generation = 120;</code>
+     * @param \Waves\Protobuf\CommitToGenerationTransactionData $var
+     * @return $this
+     */
+    public function setCommitToGeneration(\Waves\Protobuf\CommitToGenerationTransactionData|null $var)
+    {
+        $this->writeOneof(120, $var);
 
         return $this;
     }

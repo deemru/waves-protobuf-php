@@ -6,8 +6,8 @@
 namespace Waves\Protobuf\InvokeScriptResult\Call;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.InvokeScriptResult.Call.Argument</code>
@@ -54,7 +54,7 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setIntegerValue($var)
+    public function setIntegerValue(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(1, $var);
@@ -81,9 +81,9 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBinaryValue($var)
+    public function setBinaryValue(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -108,9 +108,9 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStringValue($var)
+    public function setStringValue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -135,9 +135,8 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setBooleanValue($var)
+    public function setBooleanValue(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -162,9 +161,9 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCaseObj($var)
+    public function setCaseObj(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -189,9 +188,8 @@ class Argument extends \Google\Protobuf\Internal\Message
      * @param \Waves\Protobuf\InvokeScriptResult\Call\Argument\PBList $var
      * @return $this
      */
-    public function setList($var)
+    public function setList(\Waves\Protobuf\InvokeScriptResult\Call\Argument\PBList|null $var)
     {
-        GPBUtil::checkMessage($var, \Waves\Protobuf\InvokeScriptResult\Call\Argument\PBList::class);
         $this->writeOneof(10, $var);
 
         return $this;

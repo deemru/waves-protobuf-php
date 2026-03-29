@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.MicroBlock</code>
@@ -38,6 +38,10 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes state_hash = 6;</code>
      */
     protected $state_hash = '';
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 7;</code>
+     */
+    protected $finalization_voting = null;
 
     /**
      * Constructor.
@@ -49,8 +53,9 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      *     @type string $reference
      *     @type string $updated_block_signature
      *     @type string $sender_public_key
-     *     @type array<\Waves\Protobuf\SignedTransaction>|\Google\Protobuf\Internal\RepeatedField $transactions
+     *     @type \Waves\Protobuf\SignedTransaction[] $transactions
      *     @type string $state_hash
+     *     @type \Waves\Protobuf\FinalizationVoting $finalization_voting
      * }
      */
     public function __construct($data = NULL) {
@@ -72,7 +77,7 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
@@ -94,9 +99,9 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReference($var)
+    public function setReference(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->reference = $var;
 
         return $this;
@@ -116,9 +121,9 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUpdatedBlockSignature($var)
+    public function setUpdatedBlockSignature(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->updated_block_signature = $var;
 
         return $this;
@@ -138,9 +143,9 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSenderPublicKey($var)
+    public function setSenderPublicKey(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->sender_public_key = $var;
 
         return $this;
@@ -148,7 +153,7 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.SignedTransaction transactions = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\SignedTransaction>
      */
     public function getTransactions()
     {
@@ -157,10 +162,10 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.SignedTransaction transactions = 5;</code>
-     * @param array<\Waves\Protobuf\SignedTransaction>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\SignedTransaction[] $var
      * @return $this
      */
-    public function setTransactions($var)
+    public function setTransactions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\SignedTransaction::class);
         $this->transactions = $arr;
@@ -182,10 +187,41 @@ class MicroBlock extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStateHash($var)
+    public function setStateHash(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->state_hash = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 7;</code>
+     * @return \Waves\Protobuf\FinalizationVoting|null
+     */
+    public function getFinalizationVoting()
+    {
+        return $this->finalization_voting;
+    }
+
+    public function hasFinalizationVoting()
+    {
+        return isset($this->finalization_voting);
+    }
+
+    public function clearFinalizationVoting()
+    {
+        unset($this->finalization_voting);
+    }
+
+    /**
+     * Generated from protobuf field <code>.waves.FinalizationVoting finalization_voting = 7;</code>
+     * @param \Waves\Protobuf\FinalizationVoting $var
+     * @return $this
+     */
+    public function setFinalizationVoting(\Waves\Protobuf\FinalizationVoting|null $var)
+    {
+        $this->finalization_voting = $var;
 
         return $this;
     }

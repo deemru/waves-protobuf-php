@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.PaymentTransactionData</code>
@@ -52,9 +52,9 @@ class PaymentTransactionData extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRecipientAddress($var)
+    public function setRecipientAddress(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->recipient_address = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class PaymentTransactionData extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAmount($var)
+    public function setAmount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->amount = $var;

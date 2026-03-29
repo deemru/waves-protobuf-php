@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.DataTransactionData</code>
@@ -25,7 +25,7 @@ class DataTransactionData extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Waves\Protobuf\DataEntry>|\Google\Protobuf\Internal\RepeatedField $data
+     *     @type \Waves\Protobuf\DataEntry[] $data
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class DataTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.DataEntry data = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Waves\Protobuf\DataEntry>
      */
     public function getData()
     {
@@ -44,10 +44,10 @@ class DataTransactionData extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .waves.DataEntry data = 1;</code>
-     * @param array<\Waves\Protobuf\DataEntry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Waves\Protobuf\DataEntry[] $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Waves\Protobuf\DataEntry::class);
         $this->data = $arr;

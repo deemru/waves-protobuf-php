@@ -6,8 +6,8 @@
 namespace Waves\Protobuf;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>waves.Recipient</code>
@@ -55,9 +55,9 @@ class Recipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPublicKeyHash($var)
+    public function setPublicKeyHash(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -82,9 +82,9 @@ class Recipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAlias($var)
+    public function setAlias(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(2, $var);
 
         return $this;
